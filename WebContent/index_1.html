@@ -1,0 +1,210 @@
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.css" rel="stylesheet" type="text/css">
+	    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700' rel='stylesheet' type='text/css'>
+	    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,800,700' rel='stylesheet' type='text/css'>
+	    <link href="style.css" rel="stylesheet" type="text/css">
+	    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+	    <script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
+	    <script type="text/javascript" src="global.js"></script>
+	    <script type="text/javascript" src="matches.js"></script>
+	</head>
+	<body style="margin:0px;height:100%">
+		<div class="navbar-wrapper">
+			<div class="container">
+				<nav class="navbar">
+					<div class="navbar-header">
+						<a class="navbar-brand"">
+							<img src="logo_top.png"/>
+						</a>
+					</div>
+					<ul id="navigationList" class="nav navbar-nav navbar-right">
+						<li>
+	                		<a class="navItem" href="#about">About</a>
+	              		</li>
+	              		<li class="dropdown">
+	              			<a class="navItem" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fixtures<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+							  <li><a class="navItem" href="#fixtures">Current Calendar</a></li>
+							  <li role="separator" class="divider"></li>
+							  <li><a class="navItem" href="#">Season 2015</a></li>
+							</ul>
+						</li>
+						<li>
+							<a class="navItem" href="#team">Team</a>
+						</li>
+						<li class="dropdown">
+		              		<a href="#" class="navItem dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cricket Switzerland<span class="caret"></span></a>
+		              		<ul class="dropdown-menu">
+		                		<li><a class="navItem" href="http://www.cricketswitzerland.ch/">Swiss Cricket League</a></li>
+		                		<li><a class="navItem" href="http://www.espncricinfo.com/">ESPN CricInfo</a></li>
+		                		<li role="separator" class="divider"></li>
+		                		<li><a class="navItem" href="http://www.oltencc.com/">Olten CC</a></li>
+		                		<li><a class="navItem" href="http://www.winterthurcc.ch/">Winterthur CC</a></li>
+		                		<li><a class="navItem" href="https://www.facebook.com/pages/Power-Winterthur-CC/353858091422294">Power Winterthur CC</a></li>
+		                		<li><a class="navItem" href="http://www.nomadscc.com/">Nomads CC</a></li>
+		                		<li><a class="navItem" href="http://www.bernecricket.com/">Berne CC</a></li>
+		                		<li role="separator" class="divider"></li>
+		                		<li><a class="navItem" href="http://club-cricket.web.cern.ch/Club-Cricket/">Cern CC</a></li>
+		                		<li><a class="navItem" href="http://www.ge11stars.com/">Geneva XI Stars CC</a></li>
+		                		<li><a class="navItem" href="https://www.facebook.com/Geneva-International-Cricket-Club-GICC-165592440163573/">Geneva International CC</a></li>
+		                		<li><a class="navItem" href="http://www.slccgeneva.com/">Geneva Sri Lanka Cricket Club</a></li>
+		                	</ul>
+	                	</li>
+	                	<li>
+		                	<a class="navItem" href="#team">Contact</a>
+	                	</li>
+               		</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="cover">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<h1 class="clubname">Geneva Cricket Club</h1>
+						<h1 class="underClub">Home of Swiss Cricket since 1872</h1>
+						<div class="social">
+				            <ul>
+				            	<li><a href="https://www.facebook.com/Geneva1872/"><i class="fa fa-lg fa-facebook"></i></a></li>
+				            </ul>
+			            </div>
+					</div>
+				</div>
+	    		
+			</div>
+		</div>
+		<section id="wins">
+			<div class="container">
+				<ul class="row" id="winners">
+	    			<li class="col-md-4 text-center">
+	    				<span class="icon bg-secondary icon-lg">
+	    					<i class="fa fa-trophy fa-5x trophy-icon"></i>
+	    				</span>
+	    				<h3><strong>Pickwick cup T20</strong></h3>
+	    				<medium>2004 and 2009 Champions</medium>
+	    			</li>
+	    			<li class="col-md-4 text-center">
+	    				<i class="fa fa-trophy fa-5x trophy-icon"></i>
+	    				<h3 class="tournament "><strong>Cricket Switzerland League</strong></h3>
+	    				<medium>2004 and 2005 Champions</medium>
+	    			</li>
+	    			<li class="col-md-4 text-center">
+	    				<i class="fa fa-trophy fa-5x trophy-icon"></i>
+	    				<h3 class="tournament"><strong>SCA T20 </strong></h3>
+	    				<medium>2014 Champion</medium>
+	    			</li>
+	    		</ul>
+    		</div>
+		</section>
+		<section id="calender">
+			<div class="container" id="fixtures">
+				<div class="row">
+		          <div class="col-md-12">
+		            <h1 class="text-center text-primary" contenteditable="true">Fixtures</h1>
+		          </div>
+		        </div>
+				<div class="row">
+					<div class="col-md-12">
+						<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=200&amp;wkst=1&amp;hl=en_GB&amp;bgcolor=%23FFFFFF&amp;src=genevecricketclub%40gmail.com&amp;color=%231B887A&amp;ctz=Europe%2FZurich" style="border-width:0" width="100%" height="300px" frameborder="0" scrolling="no"></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="about">
+			<div class="container">
+		        <div class="row">
+		          <div class="col-md-12">
+		            <h1 class="text-center text-primary" contenteditable="true">About the Club</h1>
+		          </div>
+		        </div>
+		        <div class="row">
+		        	<div class="col-md-6">
+						<p>Founded on 16 April 1872, the Geneva Cricket Club (GCC) was established by members of the British community at a meeting held in the famous Brasserie Landolt near Plainpalais. As of today, it is the oldest cricket club in Switzerland as well as one of the oldest sports club in the country. The rich history of GCC is characterised by not only its longevity but also its success in various formats of the game.</p>
+						<p>The Club started to play on the grassy plateau of Plainpalais and then moved to the large property of La Garance in Chêne-Bougeries in 1890. The Club’s activities were suspended in 1914 because of the First World War. It was revived many years later in 1952, but it has been continuously active up until this day. It first set its ground in Richemont but moved thereafter to the Bout-du-Monde in 1991, where it has experienced its most prolific period. GCC still operates till this day in the beautiful sports complex of the Bout-du-Monde.</p>
+						<p>Since then, the Geneva Cricket Club and its players have travelled around the world to participate in various competitions in countries such as France, the United Kingdom, Germany, Spain, the Netherlands, but also farther places like Barbados and Kenya. In 1999, GCC lost by an extremely narrow margin in the final of the 40-over Swiss championship against Bern CC. GCC was the runner-up of the 2002 final too. Finally, the Club lifted the precious trophy for two consecutive years in 2004 and 2005 – in both occasions against the Nomads CC from Zurich – and nearly won again in 2006. The Club also won the T20 Swiss competition in 2004 and 2009 against Geneva SL CC and Power CC respectively</p>
+					</div>
+		        	<div class="col-md-6">
+		        		<p>Fondé le 16 avril 1872, le Geneva Cricket Club (GCC) fut inauguré par des membres de la communauté britannique de Genève lors une réunion tenue dans la fameuse brasserie Landolt, près de Plainpalais. Jusqu’à ce jour, il s’agit du plus ancien club de cricket en Suisse, ainsi qu’un des plus vieux clubs de sport en terre helvète. La riche histoire de GCC est caractérisée par non seulement sa longévité mais aussi son succès au travers des divers formats du jeu.</p>
+		        		<p>À ses débuts, le GCC jouait sur la plaine de Plainpalais, puis il se déplaça à la Garance en 1890, une grande propriété de Chêne-Bougeries. Les activités du club furent suspendues en 1914 dus aux évènements de la Première guerre mondiale. Il a fallu attendre 1952 pour qu’il renaisse de ses cendres. Le club a été continuellement actif depuis. Il prit d’abord possession d’un terrain à Richemont, puis s’installa définitivement en 1991 au centre sportif du Bout-du-Monde, où il connut dès lors sa période la plus prolifique. Le GCC continue d’ailleurs aujourd’hui de joueur sur le magnifique terrain du Bout-du-Monde.</p>
+		        		<p>Depuis ce temps, le Geneva Cricket Club et ses joueurs ont parcouru le monde pour participer à des tournois dans divers pays tels que la France, le Royaume-Uni, l’Allemagne, l’Espagne, les Pays-Bas, mais aussi dans des contrées plus lointaines comme la Barbade ou le Kenya. En 1999, le GCC s’est incliné d’extrême justesse en finale du championnat suisse de 40 overs contre le Bern CC. Le club a aussi été finaliste en 2002. Finalement, le GCC a pu soulever le précieux trophée durant deux années consécutives, en 2004 et 2005, contre le Nomads CC de Zurich, et a failli le remporter de nouveau en 2006. Le club a aussi gagné la compétition suisse de T20 en 2004 et 2009 contre respectivement le Geneva SL CC et le Power CC</p>
+		        	</div>
+	        	</div>
+       		</div>
+		</section>
+		<section id="team">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1 class="text-center text-primary">Team</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="text-center text-primary">Players</h2>
+					</div>
+				</div>
+				<div class="row" id="players">
+					<script id="entry-template" type="text/x-handlebars-template">
+						{{#each players}}
+		  					<div class="col-md-3">
+								<div class="thumb-pad1">
+									<div class="thumbnail">
+										<figure><img src="team/not_known.png" class="center-block img-circle img-responsive player"></figure>
+										<div class="caption text-center">
+											<p class="title">{{name}}</p>
+											<p>{{description}}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+		 				{{/each}}
+					</script> 
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="text-center text-primary">Management</h2>
+					</div>
+				</div>
+				<div class="row" id="admin">
+					<script id="admin-template" type="text/x-handlebars-template">
+						{{#each members}}
+		  					<div class="col-md-3">
+								<div class="thumb-pad1">
+									<div class="thumbnail">
+										<figure><img src="team/not_known.png" class="center-block img-circle img-responsive player"></figure>
+										<div class="caption text-center">
+											<p class="title">{{name}}</p>
+											<p>{{description}}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+		 				{{/each}}
+					</script>
+				</div>
+			</div>
+		</section>
+		<section id="contact">
+			<div class="container-fluid contactstrip">
+				<div class="row">
+					<div class="col-md-12">
+						<h1 class="text-center text-primary">Contact</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<p class="contactInfo"> email: genevecricketclub@gmail.com  phone: +41-787697808</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

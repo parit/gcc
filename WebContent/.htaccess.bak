@@ -1,0 +1,22 @@
+
+
+#Weebly Additions Start
+ErrorDocument 404 /w_api/Handler.php
+
+RewriteEngine on
+
+
+
+RewriteCond %{REQUEST_URI} !-f
+RewriteRule ^ajax/(.*)$	/w_api/Handler.php
+
+RewriteBase /
+RewriteRule ^$ index.html [R=301,L]
+
+
+
+
+
+
+
+#Weebly Additions End

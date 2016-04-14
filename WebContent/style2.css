@@ -1,0 +1,98 @@
+ul#winners {
+	list-style-type: none;
+}
+
+.trophy-icon {
+	background: #ffb619 none repeat scroll 0 0;
+	border-radius: 100%;
+	padding: 0.5em;
+	color: #0000;
+}
+
+section {
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+#team {
+	background: #333333 none repeat scroll 0 0;
+}
+
+.match-top-row {
+	border-bottom: 1px solid #ddd;
+}
+
+#forUpcoming {
+	padding-left:5px;padding-right:5px;
+}
+
+#allMatches {
+	margin-top:10px;
+	background: #F3EED1 none repeat scroll 0 0;
+}
+
+.each-match {
+	padding:5px;
+	background: #FFFFFF none repeat scroll 0 0;
+	border-radius: 4px 4px 0 0;
+    border: 2px solid #ddd;
+    margin-bottom:10px;
+}
+
+h1.season {
+	color: #F07C00;	
+}
+
+#forResults, #admin {
+	display:none
+}
+
+.carousel-caption {
+	background: #000000 none repeat scroll 0 0;
+	border-radius: 10px 10px 10px 10px;
+	opacity: 0.7;
+}
+
+#wins, #fixtures {
+	background: #333;
+}
+
+#myCarousel {
+	margin-bottom: 0px;
+}
+
+section {
+	margin:0px;
+}
+
+section#wins {
+	padding-top: 20px;
+}
+
+ul#winners > li {
+	color: #ffffff
+} 
+
+h1.header {
+	color: #FFB619;	
+}
+
+div#about {
+	padding-top : 20px;
+}
+
+#facebookLink {
+	background: blue none repeat scroll 0 0;
+	color:white;
+}
+
+#facebookLink > i, #instagramLink > i {
+	 background-color: #333333;
+    border: 2px solid #ffb619;
+    border-radius: 50%;
+    color: #ffb619;
+    font-size: 2.5em;
+    padding: 0.5em;
+    text-align: center;
+}
+
