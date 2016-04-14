@@ -61,14 +61,6 @@
 				</ul>
                 </li>
                 <li><a href="#team">Team</a></li>
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fixtures<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-				  <li><a class="navItem" href="#fixtures">Current Calendar</a></li>
-				  <li role="separator" class="divider"></li>
-				  <li><a class="navItem" href="#">Season 2015</a></li>
-				</ul>
-                </li>
                 <li><a target="_blank" href="https://www.instagram.com/genevacricketclub/">Gallery</a></li>
                 <li><a target="_blank" href="https://docs.google.com/forms/d/1kRyBwyLTX2RRyWGJp3l_BWWz2_PxolfG7pnnGfa5MNE/viewform">Contact</a></li>
                 <li class="dropdown">
@@ -166,100 +158,50 @@
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
-
-	<section id="fixtures">
+	<section id="mid">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h1 class="text-center header"><strong>Fixtures</strong></h1>
+			<div class="row" id="midRow">
+				<div class="col-sm-6 blog-main" id="blogsCol">
+					<h1 class="blog-title">Latest Updates</h1>
+					<script id="blog-posts" type="text/x-handlebars-template">
+					{{#each entry}}
+					<div class="blog-post">
+						<h2 class="blog-post-title"><a href="{{link}}">{{title}}</a></h2>
+						<p class="blog-post-meta">{{publishedDate}} by <a href="https://genevacricketclub.wordpress.com/">{{author}}</a></p>
+						<p>{{{content}}}</p>
+					</div>
+					{{/each}}
+					</script>
 				</div>
-			</div>
-		</div>
-		<div class="container">
-			<ul class="nav nav-tabs">
-			  <li role="presentation" class="active"><a id="toUpcoming">Upcoming Matches</a></li>
-			  <li role="presentation"><a id="toResults">Results</a></li>
-			  <!--  <li role="presentation"><a href="#">Available Dates</a></li>-->
-			</ul>
-		</div>
-		<div class="container" id="allMatches">
-			<div class="row">
-				<div class="col-md-12">
-					<h2 class="season text-center">Season 2016</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12" id="resultsContainer">
-					<div class="row" id="forUpcoming"></div>
-					<div class="row" id="forResults">
-						<div class="col-md-12 each-match">
-							<h2 class="text-center">Results not available for this season.</h2>
+				<div class="col-sm-5 col-sm-offset-1 blog-sidebar" id="fixturesCol">
+					<div class="row">
+						<div class="col-sm-12" id="fixturesInnerCol">
+							<ul class="nav nav-pills">
+								<li role="presentation" class="active"><a id="toUpcoming">Fixtures</a></li>
+								<li role="presentation"><a id="toResults">Results</a></li>
+							</ul>
+							<div class="row" id="fixturesList">
+								<script id="upcoming-matches" type="text/x-handlebars-template">
+								{{#each match}}
+								<div class="col-sm-12 match-bottom-row">
+									<p><b>GCC vs {{against}} at {{venue}}</b></p>
+									<p>{{tournament}} | {{type}} | {{date}}</p>
+								</div>
+								<hr>
+								{{/each}}
+								</script>
+							</div>
+							<div class="row" id="resultsList">
+								<div class="col-sm-12">
+									<p><b>No Results yet</b></p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			
-			<script id="upcoming-matches" type="text/x-handlebars-template">
-			{{#each match}}
-			<div class="col-md-12 each-match" >
-				<!--  row with bottom border -->
-				<div class="row match-top-row">
-					<div class="col-md-6">
-						<span><b>{{tournament}}</b> | {{type}} | {{date}}</span>
-					</div>
-					<div class="col-md-6">
-						<span class="pull-right"><b>Venue</b> {{venue}}</span>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="row">
-							<!-- logo -->
-							{{#if logo}}
-							<div class="col-md-2">
-								<!--  <img src="gcc_small_logo.png"/>-->
-							</div>
-							<!-- name -->
-							<div class="col-md-10">
-								<h3><strong>GCC</strong></h3>
-							</div>
-							{{else}}
-							<div class="col-md-12">
-								<h3><strong>GCC</strong></h3>
-							</div>
-							{{/if}}
-						</div>
-					</div>
-					<div class="col-md-4">
-						<h3 class="text-center">vs</h3>
-					</div>
-					<div class="col-md-4">
-						<div class="row">
-							{{#if logo}}
-							<!-- logo -->
-							<div class="col-md-2">
-							</div>
-							<!-- name -->
-							<div class="col-md-10">
-								<h3 class="pull-right"><strong>{{against}}</strong></h3>
-							</div>
-							{{else}}
-							<div class="col-md-12">
-								<h3 class="pull-right"><strong>{{against}}</strong></h3>
-							</div>
-							{{/if}}
-						</div>						
-					</div>
-				</div>
-				<!-- row with border -->
-				<div class="row matchresult">
-					<div class="col-md-12">
-					</div>
-				</div>
-			</div>
-			{{/each}}
-			</script>
 		</div>
+		
 	</section>
 	<section id="team">
 		<div class="container">

@@ -13,42 +13,7 @@ var fixtures = (function(){
 	fixtures.prototype.renderFormattedData = function(formatedData, containerId) {
 		var context = this;
 		var template = Handlebars.compile($("#upcoming-matches").html());
-		$('#forUpcoming').append(template({'match' : formatedData}));
-		
-//		formatedData.sort(function(a,b){
-//			return new Date(b.date) - new Date(a.date);
-//		});
-		
-		
-		
-//		$.each(formatedData,function(index,obj){
-//			if (obj.result.startsWith('Lost')) {
-//				obj.winner = obj.against;
-//				obj['winner-score'] = obj['score-against'];
-//				obj.against = "GCC";
-//				obj['score-against'] = obj['score-for'];
-//			} 
-//			else if (obj.result.startsWith('Won')) {
-//				obj.winner = "GCC";
-//				obj['winner-score'] = obj['score-for'];
-//			}
-//		});
-//		
-//		Handlebars.registerHelper('isActive', function (index, options) 
-//				{
-//					return index == 0 ? options.fn(this) : options.inverse(this);
-//				});	
-//		
-//		var source   = $("#matches-template").html();
-//		var template = Handlebars.compile(source);
-//		$('#carousel-inner').append(template({"matches" : formatedData}));
-//		
-//		source   = $("#carousal-indicators-template").html();
-//		template = Handlebars.compile(source);
-//		$('#carousel-indicators').append(template({"matches" : formatedData}));
-//		$("#myCarousel").carousel({
-//			interval: false
-//		});
+		$('#fixturesList').append(template({'match' : formatedData}));
 	};
 	
 	fixtures.prototype.getFixtureData = function() {

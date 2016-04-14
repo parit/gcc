@@ -36,9 +36,21 @@ $(document).ready(function(){
 	team('https://spreadsheets.google.com/feeds/list/1dPbsHsdSgQo4rUnxg-rzfYmy0w17vTJttHZ4PRMs3Uc/1/public/basic?alt=json',$('#players'));
 	team('https://spreadsheets.google.com/feeds/list/1J3qnqDHtNXsQBYCjhkW9mRyIxwdiIjypAkZKr8Sxsos/1/public/basic?alt=json',$('#admin'));
 	
-	var resultsContainer = $('#resultsContainer');
-	$('#toUpcoming').click(toggleTabsFunction(resultsContainer,$('#forUpcoming')));
-	$('#toResults').click(toggleTabsFunction(resultsContainer,$('#forResults')));
+	$('#toUpcoming').click(function(){
+		$('#toResults').parent('li').removeClass('active');
+		$(this).parent('li').addClass('active');
+		$('#resultsList').hide();
+		$('#fixturesList').show();
+		return false;
+	});
+	
+	$('#toResults').click(function(){
+		$('#toUpcoming').parent('li').removeClass('active');
+		$(this).parent('li').addClass('active');
+		$('#fixturesList').hide();
+		$('#resultsList').show();
+		return false;
+	});
 
 	var playersContainer = $('#playersContainer');
 	$('#toPlayers').click(toggleTabsFunction(playersContainer,$('#players')));
@@ -48,14 +60,12 @@ $(document).ready(function(){
 	gcc.fixtures = new fixtures();
 	gcc.fixtures.init();
 	
-	
+	gcc.postTemplate = Handlebars.compile($('#blog-posts').html());
 	var feed = new google.feeds.Feed("https://genevacricketclub.wordpress.com/feed/");
+	feed.setNumEntries(3);
 	feed.load(function(result){
 			if (!result.error) {
-				for(var i = 0; i < result.feed.entries.length; i++) {
-					var entry = result.feed.entries[i];
-					console.log(entry.title);
-				}
+				$('#blogsCol').append(gcc.postTemplate({'entry' : result.feed.entries}));
 			}
 		});
 });

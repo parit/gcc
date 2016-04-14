@@ -95,4 +95,45 @@ div#about {
 .fa-facebook:hover {
     color: #4060A5;
 }
+#mid {
+	background: #EEEEEE none repeat scroll 0 0;
+}
 
+#blogsCol, #fixturesCol {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	max-height: 500px;
+	overflow: hidden;
+}
+
+#blogsCol:hover, #fixturesCol:hover {
+	overflow: auto;
+}
+
+#fixturesList, #resultsList {
+	margin-top: 1em;
+}
+
+#fixturesCol {
+	padding-left: 1em;
+}
+
+#fixturesInnerCol {
+	padding-top: 1em;
+}
+
+#resultsList {
+	display:none;
+}
+#blogsCol, #fixturesInnerCol {
+	background: #ffffff none repeat scroll 0 0;
+}
+
+.match-bottom-row {
+	border-bottom: 1px solid #ddd;
+	margin-top: 1em;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+#	background: #ffb619 none repeat scroll 0 0;
+}
