@@ -141,3 +141,11 @@ div#about {
 #fixturesCol {
 	min-height: 175px;
 }
+
+footer {
+	min-height: 200px;
+}
+
+body {
+	padding-bottom: 0px;
+}

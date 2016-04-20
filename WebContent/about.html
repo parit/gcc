@@ -64,6 +64,7 @@
                 </li>
                 <li><a href="http://genevacricketclub.ch/#team">Team</a></li>
                 <li><a target="_blank" href="https://www.instagram.com/genevacricketclub/">Gallery</a></li>
+                <li><a href="#map-canvas">Ground</a></li>
                 <li><a target="_blank" href="https://docs.google.com/forms/d/1kRyBwyLTX2RRyWGJp3l_BWWz2_PxolfG7pnnGfa5MNE/viewform">Contact</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
@@ -198,9 +199,11 @@
 	        	</div>
         	</div>
       </div>
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>© 2015 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+      <footer style="height:200px;">
+      	<div id="map-canvas" style="height:100%">
+      	</div>
+        <!--  <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>© 2015 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>-->
       </footer>
 
 
@@ -218,7 +221,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <script src="matches.js"></script>
     <script src="global.js"></script>
-    <script src="jfeed.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9LwenYnqs5CwuugrwozttpBI0lk6Pqi0&callback=initMap" async defer></script>
   
 
 <svg style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;" preserveAspectRatio="none" viewBox="0 0 500 500" height="500" width="500"><defs><style type="text/css"></style></defs><text style="font-weight:bold;font-size:25pt;font-family:Arial, Helvetica, Open Sans, sans-serif" y="25" x="0">500x500</text></svg></body></html>

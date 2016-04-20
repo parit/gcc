@@ -1,6 +1,48 @@
 // general method to bind a function call to a context
 var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+var initMap = function() 
+{
+	var geocoder = new google.maps.Geocoder();
+	var address = 'Le Bout-du-Monde, Geneva, Switzerland';
+	var mapOptions = {
+		 zoom: 15,
+         disableDefaultUI: true,
+         mapTypeControl: true,
+         mapTypeControlOptions: {
+             style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+             mapTypeIds: [
+               google.maps.MapTypeId.ROADMAP,
+               google.maps.MapTypeId.TERRAIN
+             ]
+           },
+        scrollwheel: false
+	};
+	 var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+	 if (geocoder) {
+     geocoder.geocode( { 'address': address}, function(results, status) {
+       if (status == google.maps.GeocoderStatus.OK) {
+         if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+         map.setCenter(results[0].geometry.location);
+           var infowindow = new google.maps.InfoWindow(
+               {
+                 content: address,
+                 map: map,
+                 position: results[0].geometry.location,
+               });
 
+           var marker = new google.maps.Marker({
+               position: results[0].geometry.location,
+               map: map, 
+               title:address
+           }); 
+
+         } else {
+         	alert("No results found");
+         }
+       }
+     });
+	}
+};
 var gcc = {};
 var toggleTabsFunction = function(container, showUp) {
 	return function(event) {
