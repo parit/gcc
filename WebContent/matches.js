@@ -12,8 +12,20 @@ var fixtures = (function(){
 	
 	fixtures.prototype.renderFormattedData = function(formatedData, containerId) {
 		var context = this;
+		var fixtureContainer = $('#fixturesList');
+		fixtureContainer.html('');
 		var template = Handlebars.compile($("#upcoming-matches").html());
-		$('#fixturesList').append(template({'match' : formatedData}));
+		var upcoming = $.grep(formatedData,function(v){ return v.result ? false : true});
+		fixtureContainer.append(template({'match' : upcoming}));
+		
+		var resultContainer = $('#resultsList');
+		resultContainer.html('');
+		template = Handlebars.compile($("#result-matches").html());
+		var results = $.grep(formatedData,function(v){ return v.result ? true : false});
+		if (results.length > 0)
+			resultContainer.append(template({'match' : results}));
+		else 
+			resultContainer.append($("<div class='noresults col-sm-12'><p><b>No Results yet</b></p></div>"));
 	};
 	
 	fixtures.prototype.getFixtureData = function() {
@@ -31,6 +43,7 @@ var fixtures = (function(){
 				   }
 				   formatedData.push(_data);
 				}
+				console.log(formatedData);
 				context.renderFormattedData.call(context,formatedData);
 			}
 		});

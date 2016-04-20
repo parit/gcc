@@ -194,7 +194,6 @@
 								<li role="presentation" class="active"><a id="toUpcoming">Fixtures</a></li>
 								<li role="presentation"><a id="toResults">Results</a></li>
 							</ul>
-							<div class="row" id="fixturesList">
 								<script id="upcoming-matches" type="text/x-handlebars-template">
 								{{#each match}}
 								<div class="col-sm-12 match-bottom-row">
@@ -204,11 +203,19 @@
 								<hr>
 								{{/each}}
 								</script>
+								<script id="result-matches" type="text/x-handlebars-template">
+								{{#each match}}
+								<div class="col-sm-12 match-bottom-row">
+									<p><b>GCC vs {{against}} at {{venue}}</b></p>
+									<p>{{tournament}} | {{type}} | {{date}}</p>
+									<p>{{result}}</p>
+								</div>
+								<hr>
+								{{/each}}
+								</script>							
+							<div class="row" id="fixturesList">
 							</div>
 							<div class="row" id="resultsList">
-								<div class="col-sm-12">
-									<p><b>No Results yet</b></p>
-								</div>
 							</div>
 						</div>
 					</div>
