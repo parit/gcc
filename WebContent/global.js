@@ -59,6 +59,7 @@ $(document).ready(function(){
 	
 	gcc.fixtures = new fixtures();
 	gcc.fixtures.init();
+	$('#season-2016').click();
 	
 	gcc.postTemplate = Handlebars.compile($('#blog-posts').html());
 	var feed = new google.feeds.Feed("https://genevacricketclub.wordpress.com/feed/");

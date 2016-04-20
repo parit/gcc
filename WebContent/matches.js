@@ -1,4 +1,10 @@
-var fixtures = (function(){
+var fixtures = (function() {
+	
+	var seasons = {
+		"2015" : "https://spreadsheets.google.com/feeds/list/1Le0TL0SajUKWyqnzSQuRyu4c-ACdoQR9FV_YXPLtOsw/1/public/basic?alt=json",
+		"2016" : "https://spreadsheets.google.com/feeds/list/1rs8faeR-UcxqzHZWIKBmbRQv3Kqm4yn_Rqolle_yyKs/1/public/basic?alt=json"	
+	};
+	
 	function fixtures(container) {
 		this.renderFormattedData = __bind(this.renderFormattedData, this);
 		this.getFixtureData = __bind(this.getFixtureData, this);
@@ -7,7 +13,12 @@ var fixtures = (function(){
 	}
 	
 	fixtures.prototype.init = function(container) {
-		this.getFixtureData();
+		var context = this;
+		$('.seasons-select').click(function(){
+			var season = $(this).attr('id').split('-')[1];
+			$('#season-selected').html('Season ' + season);
+			context.getFixtureData.call(context,season);
+		});
 	};
 	
 	fixtures.prototype.renderFormattedData = function(formatedData, containerId) {
@@ -16,7 +27,10 @@ var fixtures = (function(){
 		fixtureContainer.html('');
 		var template = Handlebars.compile($("#upcoming-matches").html());
 		var upcoming = $.grep(formatedData,function(v){ return v.result ? false : true});
-		fixtureContainer.append(template({'match' : upcoming}));
+		if (upcoming.length > 0) 
+			fixtureContainer.append(template({'match' : upcoming}));
+		else
+			fixtureContainer.append($("<div class='noresults col-sm-12'><p><b>No Upcoming matches yet</b></p></div>"));
 		
 		var resultContainer = $('#resultsList');
 		resultContainer.html('');
@@ -28,10 +42,11 @@ var fixtures = (function(){
 			resultContainer.append($("<div class='noresults col-sm-12'><p><b>No Results yet</b></p></div>"));
 	};
 	
-	fixtures.prototype.getFixtureData = function() {
+	fixtures.prototype.getFixtureData = function(season) {
 		var context = this;
+		var link = seasons[season];
 		$.ajax({
-			url : 'https://spreadsheets.google.com/feeds/list/1rs8faeR-UcxqzHZWIKBmbRQv3Kqm4yn_Rqolle_yyKs/1/public/basic?alt=json', 
+			url : link, 
 			success : function(data) {
 				var formatedData = [];
 				for(var i = 0 ; i < data.feed.entry.length; i++) {
@@ -43,7 +58,6 @@ var fixtures = (function(){
 				   }
 				   formatedData.push(_data);
 				}
-				console.log(formatedData);
 				context.renderFormattedData.call(context,formatedData);
 			}
 		});
