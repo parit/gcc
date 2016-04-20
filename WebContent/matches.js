@@ -26,6 +26,7 @@ var fixtures = (function() {
 		var fixtureContainer = $('#fixturesList');
 		fixtureContainer.html('');
 		var template = Handlebars.compile($("#upcoming-matches").html());
+		
 		var upcoming = $.grep(formatedData,function(v){ return v.result ? false : true});
 		if (upcoming.length > 0) 
 			fixtureContainer.append(template({'match' : upcoming}));
@@ -34,7 +35,6 @@ var fixtures = (function() {
 		
 		var resultContainer = $('#resultsList');
 		resultContainer.html('');
-		template = Handlebars.compile($("#result-matches").html());
 		var results = $.grep(formatedData,function(v){ return v.result ? true : false});
 		if (results.length > 0)
 			resultContainer.append(template({'match' : results}));
@@ -53,8 +53,9 @@ var fixtures = (function() {
 				   var rowCols = data.feed.entry[i].content.$t.split(',');
 				   var _data = {};
 				   for(var j = 0; j < rowCols.length; j++) {
-					   var cols = rowCols[j].split(":");
-					   _data[cols[0].trim()] = cols[1].trim();
+					   var item = rowCols[j].trim();
+					   var index = item.indexOf(':');
+					   _data[item.substring(0,index)] = item.substring(index+1).trim();
 				   }
 				   formatedData.push(_data);
 				}

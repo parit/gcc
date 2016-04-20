@@ -137,3 +137,7 @@ div#about {
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
 #	background: #ffb619 none repeat scroll 0 0;
 }
+
+#fixturesCol {
+	min-height: 175px;
+}

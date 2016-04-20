@@ -206,26 +206,21 @@
 								<script id="upcoming-matches" type="text/x-handlebars-template">
 								{{#each match}}
 								<div class="col-sm-12 match-bottom-row">
+									{{#if link}}
+									<p><a href="{{link}}"><b>GCC vs {{against}} at {{venue}}</b></a></p>
+									{{else}}
 									<p><b>GCC vs {{against}} at {{venue}}</b></p>
+									{{/if}}
 									<p>{{tournament}} | {{type}} | {{date}}</p>
+									{{#if result}}
+										<p>{{result}}</p>	
+									{{/if}}
 								</div>
 								<hr>
 								{{/each}}
 								</script>
-								<script id="result-matches" type="text/x-handlebars-template">
-								{{#each match}}
-								<div class="col-sm-12 match-bottom-row">
-									<p><b>GCC vs {{against}} at {{venue}}</b></p>
-									<p>{{tournament}} | {{type}} | {{date}}</p>
-									<p>{{result}}</p>
-								</div>
-								<hr>
-								{{/each}}
-								</script>							
-							<div class="row" id="fixturesList">
-							</div>
-							<div class="row" id="resultsList">
-							</div>
+							<div class="row" id="fixturesList"></div>
+							<div class="row" id="resultsList"></div>
 						</div>
 					</div>
 				</div>
