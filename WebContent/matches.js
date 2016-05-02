@@ -36,6 +36,7 @@ var fixtures = (function() {
 		var resultContainer = $('#resultsList');
 		resultContainer.html('');
 		var results = $.grep(formatedData,function(v){ return v.result ? true : false});
+		results.sort(function(a,b){return new Date(b.date) - new Date(a.date);});
 		if (results.length > 0)
 			resultContainer.append(template({'match' : results}));
 		else 
